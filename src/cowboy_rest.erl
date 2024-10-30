@@ -959,7 +959,7 @@ not_modified(Req, State) ->
 			catch ?CATCH(Class, Reason, _Stacktrace) ->
 				error_terminate(Req, State2, Class, Reason, ?STACK(_Stacktrace))
 			end
-	catch ?CATCH(Class, Reason, _Stacktrace) ->
+	catch ?CATCH(Class, Reason, Stacktrace) ->
 		error_terminate(Req, State, Class, Reason, ?STACK(Stacktrace))
 	end.
 

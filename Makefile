@@ -36,7 +36,7 @@ AUTO_CI_WINDOWS ?= OTP-LATEST-22+
 
 # Standard targets.
 
-include erlang.mk
+include $(if $(ERLANG_MK_FILENAME),$(ERLANG_MK_FILENAME),erlang.mk)
 
 # Don't run the examples test suite by default.
 
